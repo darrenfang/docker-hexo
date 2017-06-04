@@ -5,23 +5,25 @@ MAINTAINER Darren Fang , <idarrenfang@gmail.com>
 WORKDIR /root/hexo
 
 RUN apt-get update && \
-    npm install cnpm -g && \
-    npm install hexo-cli -g && \
+    apt-get upgrade -y && \
+    yarn global add npm && \
+    yarn global add cnpm && \
+    yarn global add hexo-cli && \
     mkdir -p /root/hexo && \
     hexo init . && \
-    npm install && \
-    npm install hexo-generator-archive --save && \
-    npm install hexo-generator-category --save && \
-    npm install hexo-generator-index --save && \
-    npm install hexo-generator-sitemap --save && \
-    npm install hexo-generator-tag --save && \
-    npm install hexo-renderer-ejs --save && \
-    npm install hexo-renderer-marked --save && \
-    npm install hexo-renderer-stylus --save && \
-    npm install hexo-server --save && \
-    npm install hexo-deployer-git --save && \
-    npm install hexo-generator-feed --save && \
-    npm install hexo-all-minifier --save && \
+    yarn install && \
+    yarn add hexo-generator-archive --save && \
+    yarn add hexo-generator-category --save && \
+    yarn add hexo-generator-index --save && \
+    yarn add hexo-generator-sitemap --save && \
+    yarn add hexo-generator-tag --save && \
+    yarn add hexo-renderer-ejs --save && \
+    yarn add hexo-renderer-marked --save && \
+    yarn add hexo-renderer-stylus --save && \
+    yarn add hexo-server --save && \
+    yarn add hexo-deployer-git --save && \
+    yarn add hexo-generator-feed --save && \
+    yarn add hexo-all-minifier@0.0.14 --save && \
     rm -rf /root/hexo
 
 CMD [ "node" ]
